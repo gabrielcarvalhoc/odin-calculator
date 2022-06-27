@@ -1,3 +1,9 @@
+let displayInput = document.querySelector('.inputs');
+let displayResult = document.querySelector('.results');
+let buttons = document.querySelectorAll('.buttons>button')
+
+let numberInput = '';
+
 function add(num1, num2) {
     return num1 + num2;
 }
@@ -25,3 +31,11 @@ function operate(operator, num1, num2) {
         return divide(num1, num2);
     }
 }
+
+buttons.forEach((button) => {
+
+    button.addEventListener('click', () => {
+        numberInput += button.value;
+        displayInput.textContent += button.value;
+    })
+})

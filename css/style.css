@@ -26,19 +26,23 @@ body {
     width: auto;
     height: 120px;
     margin-bottom: 20px;
-    padding: 0 14px;
+    padding: 6px 20px;
     border: 1px solid black;
     border-radius: 8px;
     font-family: 'Orbitron', sans-serif;
-    font-size: 32px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+}
+
+.inputs {
+    font-size: 32px;
+    min-height: 50%;
 }
 
 .results {
     text-align: end;
     font-size: 40px;
+    min-height: 50%;
 }
 
 .buttons {
