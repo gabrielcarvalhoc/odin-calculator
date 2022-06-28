@@ -61,7 +61,7 @@ buttons.forEach((button) => {
                 numberInput = null;
             } else if (firstNumber) {
                 secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber);
+                display.textContent = operate(operator, firstNumber, secondNumber).toFixed(2);
                 firstNumber = Number(display.textContent);
                 numberInput = null;
                 secondNumber = null;
@@ -75,13 +75,13 @@ buttons.forEach((button) => {
         if (button.id === 'equals') {
             if (operator === '+' || operator === '-') {
                 secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber);
+                display.textContent = operate(operator, firstNumber, secondNumber).toFixed(2);
                 firstNumber = Number(display.textContent);
                 numberInput = null;
                 secondNumber = null;
             } else if (operator === '*' || operator === '/') {
                 secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber);
+                display.textContent = operate(operator, firstNumber, secondNumber).toFixed(2);
                 firstNumber = Number(display.textContent);
                 numberInput = 1;
                 secondNumber = null;
