@@ -1,5 +1,5 @@
 let display = document.querySelector('.display');
-let buttons = document.querySelectorAll('.buttons>button')
+let buttons = document.querySelectorAll('.buttons>button');
 
 let numberInput = null;
 let operator = '';
@@ -100,6 +100,14 @@ buttons.forEach((button) => {
         }
     });
 
+    // Delete
+    button.addEventListener('click', () => {
+        if (button.id === 'delete') {
+            numberInput = numberInput.slice(0, -1);
+            display.textContent = numberInput;
+        }
+    })
+
     // Enable/Disable dots
     button.addEventListener('click', () => {
         if (button.id === 'dot') {
@@ -111,5 +119,5 @@ buttons.forEach((button) => {
                 display.textContent += button.value;
             }
         }
-    })
+    });
 });
