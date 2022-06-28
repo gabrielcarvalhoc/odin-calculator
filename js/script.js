@@ -7,22 +7,22 @@ let firstNumber = null;
 let secondNumber = null;
 
 function add(num1, num2) {
-    return num1 + num2;
+    return Math.round((num1 + num2) * 100) / 100;
 }
 
 function subtract(num1, num2) {
-    return num1 - num2;
+    return Math.round((num1 - num2) * 100) / 100;
 }
 
 function multiply(num1, num2) {
-    return num1 * num2;
+    return Math.round((num1 * num2) * 100) / 100;
 }
 
 function divide(num1, num2) {
     if (num2 === 0) {
         return 'Error';
     }
-    return num1 / num2;
+    return Math.round((num1 / num2) * 100) / 100;
 }
 
 function operate(operator, num1, num2) {
@@ -61,7 +61,7 @@ buttons.forEach((button) => {
                 numberInput = null;
             } else if (firstNumber) {
                 secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber).toFixed(2);
+                display.textContent = operate(operator, firstNumber, secondNumber);
                 firstNumber = Number(display.textContent);
                 numberInput = null;
                 secondNumber = null;
@@ -75,13 +75,13 @@ buttons.forEach((button) => {
         if (button.id === 'equals') {
             if (operator === '+' || operator === '-') {
                 secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber).toFixed(2);
+                display.textContent = operate(operator, firstNumber, secondNumber);
                 firstNumber = Number(display.textContent);
                 numberInput = null;
                 secondNumber = null;
             } else if (operator === '*' || operator === '/') {
                 secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber).toFixed(2);
+                display.textContent = operate(operator, firstNumber, secondNumber);
                 firstNumber = Number(display.textContent);
                 numberInput = 1;
                 secondNumber = null;
@@ -99,4 +99,17 @@ buttons.forEach((button) => {
             operator = '';
         }
     });
+
+    // Enable/Disable dots
+    button.addEventListener('click', () => {
+        if (button.id === 'dot') {
+            if (!numberInput) {
+                numberInput = '0' + button.value;
+                display.textContent = '0' + button.value;
+            } else if (!numberInput.includes(button.value)) {
+                numberInput += button.value;
+                display.textContent += button.value;
+            }
+        }
+    })
 });
