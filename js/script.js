@@ -37,6 +37,12 @@ function operate(operator, num1, num2) {
     }
 }
 
+// Add keyboard support
+window.addEventListener('keydown', (e) => {
+    const key = document.querySelector(`button[data-key="${e.key}"]`);
+    key.click();
+});
+
 buttons.forEach((button) => {
 
     // Numbers
@@ -106,9 +112,9 @@ buttons.forEach((button) => {
             numberInput = numberInput.slice(0, -1);
             display.textContent = numberInput;
         }
-    })
+    });
 
-    // Enable/Disable dots
+    // Enable decimal inputs
     button.addEventListener('click', () => {
         if (button.id === 'dot') {
             if (!numberInput) {
