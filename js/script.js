@@ -79,18 +79,14 @@ buttons.forEach((button) => {
     // Equals
     button.addEventListener('click', () => {
         if (button.id === 'equals') {
+            secondNumber = Number(numberInput);
+            display.textContent = operate(operator, firstNumber, secondNumber);
+            firstNumber = Number(display.textContent);
+            secondNumber = null;
             if (operator === '+' || operator === '-') {
-                secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber);
-                firstNumber = Number(display.textContent);
                 numberInput = null;
-                secondNumber = null;
             } else if (operator === '*' || operator === '/') {
-                secondNumber = Number(numberInput);
-                display.textContent = operate(operator, firstNumber, secondNumber);
-                firstNumber = Number(display.textContent);
                 numberInput = 1;
-                secondNumber = null;
             }
         }
     });
