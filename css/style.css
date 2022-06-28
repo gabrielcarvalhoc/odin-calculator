@@ -31,18 +31,9 @@ body {
     border-radius: 8px;
     font-family: 'Orbitron', sans-serif;
     display: flex;
-    flex-direction: column;
-}
-
-.inputs {
-    font-size: 32px;
-    min-height: 50%;
-}
-
-.results {
-    text-align: end;
-    font-size: 40px;
-    min-height: 50%;
+    justify-content: end;
+    align-items: center;
+    font-size: 62px;
 }
 
 .buttons {
