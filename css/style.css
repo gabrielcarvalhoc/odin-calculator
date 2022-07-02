@@ -69,7 +69,9 @@ body {
 }
 
 #clear:hover, 
-#delete:hover {
+#delete:hover,
+#clear:active,
+#delete:active {
     background-color: #ff8585;
 }
 
@@ -79,7 +81,9 @@ body {
 }
 
 .number:hover, 
-#dot:hover {
+#dot:hover,
+.number:active,
+#dot:active {
     background-color: #c9c9c9;
 }
 
@@ -87,7 +91,8 @@ body {
     background-color: #ffffa8;
 }
 
-.operator:hover {
+.operator:hover,
+.operator:active {
     background-color: #fcfc6b;
 }
 
@@ -95,6 +100,7 @@ body {
     background-color: #b5d7fd;
 }
 
-#equals:hover {
+#equals:hover,
+#equals:active {
     background-color: #81bcff;
 }
